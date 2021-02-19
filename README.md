@@ -18,6 +18,6 @@ tbd
 tbd
 
 # Dependencies (peer)
-    **jss**: "^10.5.1",
-    **jss-preset-default**: "^10.5.1",
-    **preact**: "^10.5.12"
+	* jss: "^10.5.1"
+	* jss-preset-default: "^10.5.1"
+    * preact: "^10.5.12"

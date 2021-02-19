@@ -3,9 +3,7 @@ import { ComponentChildren } from "preact";
 
 //===========================================================================\\
 
-interface Theme 
-{
-}
+interface Theme {}
 
 interface JssThemeProviderProps
 {
@@ -43,15 +41,17 @@ declare function JssProvider(props: JssProviderProps): JSX.Element;
 
 //===========================================================================\\
 
-type UseStyles = (data?: any) => Record<string, string>;
-type ThemedStyles<T> = (theme: T) => Styles;
-
-/**
- * Creates a useStyles() hook based on unthemed styles
- */
-declare function createUseStyles(styles: Styles): UseStyles;
+type UseStyles<S> = (data?: any) => Record<keyof S, string>;
 
 /**
  * Creates a useStyles() hook based on themed styles
  */
-declare function createUseStyles<T>(styles: ThemedStyles<T>): UseStyles;
+ declare function createUseStyles<
+ 	T extends Theme,
+ 	R extends {}>
+	 (styles: (theme: T) => R): UseStyles<R>;
+
+/**
+ * Creates a useStyles() hook based on unthemed styles
+ */
+declare function createUseStyles<T extends {}>(styles: T): UseStyles<T>;

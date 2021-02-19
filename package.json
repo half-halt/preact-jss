@@ -1,6 +1,6 @@
 {
   "name": "preact-jss-tiny",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.6",
   "main": "dist/preact-jss-tiny.js",
   "module": "dist/preact-jss-tiny.esm.js",
   "typings": "src/index.d.ts",
