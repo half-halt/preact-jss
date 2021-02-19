@@ -1,6 +1,6 @@
 {
   "name": "preact-jss",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "main": "dist/preact-jss.js",
   "module": "dist/preact-jss.esm.js",
   "source": "src/index.ts",
@@ -13,7 +13,8 @@
     "url": "https://github.com/half-halt/preact-jss.git"
   },
   "files":[
-    "dist"
+    "dist",
+    "src/index.d.ts"
   ],
   "devDependencies": {
     "@parcel/transformer-typescript-tsc": "^2.0.0-nightly.600",
