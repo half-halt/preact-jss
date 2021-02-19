@@ -1,19 +1,18 @@
 {
-  "name": "preact-jss",
-  "version": "1.0.0-alpha.2",
-  "main": "dist/preact-jss.js",
-  "module": "dist/preact-jss.esm.js",
-  "source": "src/index.ts",
+  "name": "preact-jss-tiny",
+  "version": "1.0.0-alpha.4",
+  "main": "dist/preact-jss-tiny.js",
+  "module": "dist/preact-jss-tiny.esm.js",
   "typings": "src/index.d.ts",
   "license": "MIT",
   "author": "half-halt-farm@outlook.com",
-  "description": "A hook based implemention of JSS for preact",
+  "description": "A samll version of JSS for preact, loosely based on react-jss",
   "repository": {
     "type": "git",
     "url": "https://github.com/half-halt/preact-jss.git"
   },
   "files":[
-    "dist",
+    "dist/*.js",
     "src/index.d.ts"
   ],
   "devDependencies": {
@@ -26,13 +25,8 @@
     "jss-preset-default": "^10.5.1",
     "preact": "^10.5.12"
   },
-  "dependencies": {
-    "jss": "^10.5.1",
-    "jss-preset-default": "^10.5.1",
-    "preact": "^10.5.12"
-  },
   "scripts": {
-    "build": "parcel build ./src/index.ts --detailed-report --no-cache",
+    "build": "parcel build ./src/index.ts --detailed-report 20 --no-cache",
     "test": "jest",
     "test:watch": "jest --watchAll"
   }
