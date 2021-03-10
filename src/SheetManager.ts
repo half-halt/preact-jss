@@ -1,5 +1,5 @@
 import { SheetsManager, create, Styles, StyleSheet, getDynamicStyles, JssStyle } from "jss";
-import { EmptyTheme } from "./createUseStyles";
+import { EmptyTheme } from "./Context";
 // @ts-ignore
 import preset from "jss-preset-default";
 

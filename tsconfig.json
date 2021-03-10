@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
-    "lib": ["DOM.Iterable", "ESNext"],
+    "lib": ["DOM", "ESNext"],
     "allowJs": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
@@ -18,15 +18,13 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "noEmit": true,
+    "outDir": "./dist"
   },
   "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx"
+    "./src/index.ts"
   ],
   "exclude": [
-    "./dist/**/*",
-    "./node_modules/**/*"
+    "dist",
+    "node_modules"
   ]
 }

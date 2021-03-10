@@ -1,14 +1,14 @@
 import { useContext, useEffect, useLayoutEffect, useMemo, useRef } from "preact/hooks";
-import { jssContext } from "./JssContext";
 import { SheetManager } from "./SheetManager";
 import { Styles } from "jss";
-import { themeContext } from "./JssThemeContext";
+import { jssContext, themeContext, EmptyTheme } from "./Context";
 
-export const EmptyTheme = {};
 const EmptyData  = {};
 var g_sheetId = Number.MIN_SAFE_INTEGER;
 
-export function createUseStyles<ThemeType = {}>(styles: Styles<string> |((theme: ThemeType) => Styles<string>), options = {})
+type UseStylesInput<ThemeType> = ((theme: ThemeType) => Styles<string>) | Styles<string>;
+
+export function createUseStyles<ThemeType = {}>(styles: UseStylesInput<ThemeType>, options = {})
 {
 	const index = ++g_sheetId;
 

@@ -1,3 +1,3 @@
 export { createUseStyles } from "./createUseStyles";
-export { JssThemeProvider } from "./JssThemeContext";
-export { JssProvider } from "./JssContext";
+export { JssThemeProvider } from "./JssThemeProvider";
+export { JssProvider } from "./JssProvider";
