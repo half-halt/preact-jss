@@ -57,9 +57,7 @@ const config = {
 
 export default (commandLine) => {
 	if (commandLine.configDebug) {
-		console.log("Using debug config!");
-		return Object.assign(commonConfig, devConfig);
+	return Object.assign(commonConfig, devConfig);
 	}
-	console.log("Using release config!");
 	return Object.assign(commonConfig, config);
 }

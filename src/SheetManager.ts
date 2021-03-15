@@ -133,7 +133,9 @@ export class SheetManager
 		if (!metadata || !dynamicRules) {
 			return sheet.classes;
 		} 
-		const classes: Record<string, string> = {};
+
+		const styles = metadata.styles;
+		const classes: Record<keyof typeof styles, string> = {};
 	
 		for (const key in metadata.styles) {
 			classes[key] = sheet.classes[key];

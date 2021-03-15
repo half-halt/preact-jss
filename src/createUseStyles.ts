@@ -3,16 +3,23 @@ import { SheetManager } from "./SheetManager";
 import { Styles } from "jss";
 import { jssContext, themeContext, EmptyTheme } from "./Context";
 
-const EmptyData  = {};
+const EmptyData: any = {};
 var g_sheetId = Number.MIN_SAFE_INTEGER;
 
-type UseStylesInput<ThemeType> = ((theme: ThemeType) => Styles<string>) | Styles<string>;
+type CreateUseStylesOptions = {};
+type ThemedStyles<K extends string, T extends object> = (theme: T) => Styles<K>;
 
-export function createUseStyles<ThemeType = {}>(styles: UseStylesInput<ThemeType>, options = {})
+
+export function createUseStyles<
+	D extends any = any,
+	K extends string = string, 
+	T extends object = {}>(
+	styles: Styles<K> | ThemedStyles<K, T>,
+	_options: CreateUseStylesOptions = {})
 {
 	const index = ++g_sheetId;
 
-	return function useStyles(data: any = EmptyData)
+	return function useStyles(data: D = EmptyData)
 	{
 		const firstMount = useRef(true);
 		const context = useContext(jssContext);
@@ -65,6 +72,6 @@ export function createUseStyles<ThemeType = {}>(styles: UseStylesInput<ThemeType
 			 firstMount.current = false
 		});
 
-		return SheetManager.GetSheetClasses(sheet, dynamicRules);
+		return SheetManager.GetSheetClasses(sheet, dynamicRules) as Record<K, string>;
 	}
 }
